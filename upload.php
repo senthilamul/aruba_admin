@@ -3,7 +3,7 @@ include('includes/config.php');
 include('includes/session_check.php');
 if(isset($_POST['submit'])){
     
-    $count = $commonobj->arrayColumn($commonobj->getQry("SELECT count(*) as count From aruba_backlog_raw where calendar_date = '$_POST[date]'"),'','count');
+    
     if($count[0] == 0 ){
         if(count($_FILES['file_import']['name']) > 0){
             $TableNameArr = 'aruba_backlog_raw';
